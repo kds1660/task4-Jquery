@@ -444,6 +444,16 @@ function addEvent(node) {
                 showHide($thisItem, 0);
             }
 
+            if (!item.toElement) {
+                $thisItem = event.item.eq(0);
+                $firstChild = $thisItem.children('ul').children('li');
+                $secondChild = $thisItem.children('ul').children('li').children('ul').children('li');
+                $thisItem.toggleClass('checked');
+                $firstChild.toggleClass('checked');
+                $secondChild.toggleClass('checked');
+                $thisItem.find('input').prop('checked',!$thisItem.find('input').prop('checked'));
+            }
+
             if ($thisItem.next().attr('id') === 'addMainItem') {
                 $('ul').sortable('cancel');
             }
