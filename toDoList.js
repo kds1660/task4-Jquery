@@ -120,9 +120,7 @@ function MainMenu(event) {
             this[elementPart].appendTo($firstLi);
             delete this[elementPart];
         }
-
-        if (target.classList.contains('first') || target.classList.contains('second')) target = target.getElementsByTagName('ul')[0];
-        return $firstLi.appendTo(target);
+        return $firstLi.appendTo($(target).find('ul').eq(0));
     };
 
     if (!this.inputText) {
@@ -454,9 +452,7 @@ function addEvent(node) {
                 $thisItem.find('input').prop('checked',!$thisItem.find('input').prop('checked'));
             }
 
-            if ($thisItem.next().attr('id') === 'addMainItem') {
-                $('ul').sortable('cancel');
-            }
+
         }
     });
 

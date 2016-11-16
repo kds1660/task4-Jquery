@@ -12,14 +12,15 @@
 <body>
 <div id="help">Подсказка</div>
     <div id="wrapper">
+        <div id="addMainItem">
+            <input onkeyup="mainEnter(event)" id='myInput' type="text">
+            <input onclick="new MainMenu(event)"  type="button" name="addItem" value="Add">
+            <input onclick="addToStorage()"  type="button" name="Save" value="Save">
+            <input onclick="localStorage.clear()"  type="button" name="Clear" value="Clear">
+            <input placeholder="filter" id='myFilter' onkeyup="filterList(event)" type="text" value="">
+        </div>
         <ul class="mainMenu">
-            <div id="addMainItem">
-                <input onkeyup="mainEnter(event)" id='myInput' type="text">
-                <input onclick="new MainMenu(event)"  type="button" name="addItem" value="Add">
-                <input onclick="addToStorage()"  type="button" name="Save" value="Save">
-                <input onclick="localStorage.clear()"  type="button" name="Clear" value="Clear">
-                <input placeholder="filter" id='myFilter' onkeyup="filterList(event)" type="text" value="">
-            </div>
+
         </ul>
     </div>
 </body>
